@@ -12,7 +12,3 @@ Thumbs.db
 desktop.ini
 .DS_Store
 
-# Half-built when the build was paused: the stylesheet and home page exist but
-# its two product pages do not, so its internal links would 404. Excluded until
-# the design is finished.
-category-variations/clothing/design-2/

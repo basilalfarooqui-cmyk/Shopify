@@ -65,19 +65,33 @@
      whether or not the frames ever arrived. */
   var counters = $$('[data-count]');
 
-  function finalValue(el) {
-    var target = parseFloat(el.getAttribute('data-count'));
-    var suffix = el.getAttribute('data-suffix') || '';
+  /* Large figures are unreadable without separators — "180000 sold" makes a
+     reader stop and count digits, which is the opposite of what a proof
+     number is for. Grouping is applied above 9,999 only, so a year or a
+     quantity like 2026 or 4128 is left alone unless asked for. */
+  function groupThousands(s, force) {
+    var parts = s.split('.');
+    if (force || Math.abs(parseFloat(parts[0])) > 9999) {
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+    return parts.join('.');
+  }
+
+  function format(el, value) {
     var dec    = (el.getAttribute('data-dec') | 0);
-    return target.toFixed(dec) + suffix;
+    var suffix = el.getAttribute('data-suffix') || '';
+    var group  = el.hasAttribute('data-group');
+    return groupThousands(value.toFixed(dec), group) + suffix;
+  }
+
+  function finalValue(el) {
+    return format(el, parseFloat(el.getAttribute('data-count')));
   }
 
   function runCounter(el) {
     if (el.dataset.started) return;
     el.dataset.started = '1';
     var target = parseFloat(el.getAttribute('data-count'));
-    var suffix = el.getAttribute('data-suffix') || '';
-    var dec    = (el.getAttribute('data-dec') | 0);
     var dur = 1100, t0 = null;
 
     var settle = setTimeout(function () {
@@ -89,7 +103,7 @@
       if (t0 === null) t0 = t;
       var p = Math.min((t - t0) / dur, 1);
       var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = (target * eased).toFixed(dec) + suffix;
+      el.textContent = format(el, target * eased);
       if (p < 1) requestAnimationFrame(tick);
       else { clearTimeout(settle); el.textContent = finalValue(el); el.dataset.done = '1'; }
     })(performance.now());
@@ -261,6 +275,38 @@
         hideT = setTimeout(function () { toast.classList.remove('is-on'); }, 2600);
       });
     });
+  }
+
+  /* --- sticky buy bar ---------------------------------------------------
+     Appears once the primary call to action has scrolled out of view, and
+     hides again when it comes back, so a long page never leaves the button
+     out of reach on a phone. Opt in with [data-stickybuy] plus a
+     [data-stickybuy-after] element to watch. */
+  var sticky = $('[data-stickybuy]');
+  var after  = $('[data-stickybuy-after]');
+  if (sticky && after) {
+    var showSticky = function (on) { sticky.classList.toggle('is-on', on); };
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { showSticky(!en.isIntersecting && en.boundingClientRect.top < 0); });
+      }, { threshold: 0 }).observe(after);
+    }
+
+    /* Geometry fallback, for the same reason the reveal has one: a missed
+       observer callback would leave the bar either stuck open or never shown. */
+    var stickTick = false;
+    var stickSweep = function () {
+      stickTick = false;
+      var r = after.getBoundingClientRect();
+      showSticky(r.bottom < 0);
+    };
+    window.addEventListener('scroll', function () {
+      if (stickTick) return;
+      stickTick = true;
+      requestAnimationFrame(stickSweep);
+    }, { passive: true });
+    stickSweep();
   }
 
   /* --- year ------------------------------------------------------------- */
