@@ -1,0 +1,125 @@
+/* ===========================================================================
+   KOSHA — collection.css
+   The category listing page: the step between the navigation and a product.
+
+   Previously the navigation jumped straight to a single product, which meant
+   a visitor choosing "Home & Kitchen" landed on one casserole with no way to
+   see the rest. This page is that missing level — a grid of everything in the
+   category, with the same per-category theming the product pages use, so
+   moving nav -> listing -> product feels like one continuous place.
+
+   It reuses .card from site.css rather than inventing a second card, so the
+   quick-add fix and the tap-target sizes apply here too.
+   =========================================================================== */
+
+/* ---------------------------------------------------------------------------
+   HEADER BLOCK
+--------------------------------------------------------------------------- */
+.chead {
+  padding-block: var(--s-7) var(--s-6);
+  border-bottom: 1px solid var(--line);
+}
+.chead__in { display: grid; gap: var(--s-4); }
+@media (min-width: 900px) {
+  .chead__in { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: var(--s-8); align-items: end; }
+}
+.chead h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.5rem + 2.4vw, 3.2rem);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -.03em;
+  text-wrap: balance;
+}
+.chead__blurb { color: var(--ink-2); max-width: 46ch; }
+.chead__facts {
+  display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-5);
+  font-family: var(--font-mono); font-size: var(--t-xs);
+  letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3);
+  padding-top: var(--s-4); border-top: 1px solid var(--line);
+}
+
+/* ---------------------------------------------------------------------------
+   TOOLBAR
+   A real shop has filters here. These are presentational placeholders, marked
+   as such, so the layout is right when they are wired to Shopify's filtering.
+--------------------------------------------------------------------------- */
+.ctools {
+  position: sticky; top: 56px; z-index: 40;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  padding-block: var(--s-3);
+}
+.ctools__in { display: flex; align-items: center; gap: var(--s-3); }
+.ctools__count { font-size: var(--t-sm); color: var(--ink-3); white-space: nowrap; }
+.ctools__spacer { flex: 1; }
+
+.chip-row { display: flex; gap: var(--s-2); overflow-x: auto; scrollbar-width: none; }
+.chip-row::-webkit-scrollbar { display: none; }
+.fchip {
+  min-height: 44px; padding: 0 16px;
+  display: inline-flex; align-items: center; gap: 7px;
+  border: 1px solid var(--line-strong); border-radius: var(--r-pill);
+  font-size: var(--t-sm); white-space: nowrap;
+  transition: border-color var(--dur-1) var(--ease), background var(--dur-1) var(--ease), color var(--dur-1) var(--ease);
+}
+.fchip:hover { border-color: var(--ink); }
+.fchip.is-on { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.fchip svg { width: 13px; height: 13px; }
+
+/* ---------------------------------------------------------------------------
+   GRID
+--------------------------------------------------------------------------- */
+.cgrid {
+  display: grid;
+  gap: var(--s-5) var(--s-4);
+  grid-template-columns: repeat(2, 1fr);
+  padding-block: var(--s-6) var(--s-8);
+}
+@media (min-width: 760px)  { .cgrid { grid-template-columns: repeat(3, 1fr); gap: var(--s-6) var(--s-5); } }
+@media (min-width: 1100px) { .cgrid { grid-template-columns: repeat(4, 1fr); } }
+
+/* An editorial tile dropped into the grid, so a long list of products has
+   somewhere for the eye to rest. It spans two columns from tablet up. */
+.cnote {
+  grid-column: span 2;
+  display: grid; align-content: center; gap: var(--s-3);
+  padding: var(--s-6);
+  background: var(--paper-2);
+  border-radius: var(--r-sm);
+}
+.cnote h2 { font-family: var(--font-display); font-size: var(--t-xl); font-weight: 500; letter-spacing: -.02em; }
+.cnote p { font-size: var(--t-sm); color: var(--ink-2); }
+
+/* ---------------------------------------------------------------------------
+   PAGINATION — presentational, one page of results in this build
+--------------------------------------------------------------------------- */
+.cpage {
+  display: flex; align-items: center; justify-content: center; gap: var(--s-2);
+  padding-bottom: var(--section-y);
+}
+.cpage a, .cpage span {
+  min-width: 44px; min-height: 44px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: var(--r-sm); font-size: var(--t-sm);
+  border: 1px solid transparent;
+}
+.cpage a:hover { border-color: var(--line-strong); }
+.cpage .is-on { background: var(--ink); color: var(--paper); }
+.cpage .is-off { color: var(--ink-4); pointer-events: none; }
+
+/* ---------------------------------------------------------------------------
+   CROSS-LINKS to the other categories
+--------------------------------------------------------------------------- */
+.cothers { border-top: 1px solid var(--line); padding-block: var(--s-7); }
+.cothers h2 { font-family: var(--font-display); font-size: var(--t-xl); font-weight: 500; margin-bottom: var(--s-4); }
+.cothers__row { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.cothers__row a {
+  min-height: 44px; padding: 0 18px;
+  display: inline-flex; align-items: center;
+  border: 1px solid var(--line-strong); border-radius: var(--r-pill);
+  font-size: var(--t-sm);
+  transition: background var(--dur-1) var(--ease), color var(--dur-1) var(--ease), border-color var(--dur-1) var(--ease);
+}
+.cothers__row a:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }

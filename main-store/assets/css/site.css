@@ -348,8 +348,14 @@
 /* ---------------------------------------------------------------------------
    PRODUCT CARD
 --------------------------------------------------------------------------- */
-.card { display: block; position: relative; }
-.card__media { position: relative; margin-bottom: var(--s-3); border-radius: var(--r-sm); overflow: hidden; }
+/* The quick-add is absolutely positioned, so it needs a containing block that
+   matches the PHOTOGRAPH, not the whole card. Without .card__frame it anchored
+   to .card and floated over the title, price and swatches. It cannot simply
+   live inside .card__media, because that is an <a> and a <button> may not be
+   nested inside an anchor. */
+.card { display: block; }
+.card__frame { position: relative; margin-bottom: var(--s-3); }
+.card__media { position: relative; display: block; border-radius: var(--r-sm); overflow: hidden; }
 .card__media .media { border-radius: 0; }
 
 /* second photo cross-fades in on hover */
@@ -554,4 +560,28 @@ a.link.t-meta {
 @media (max-width: 900px) {
   .btn--sm { min-height: 44px; }
   .qty--sm { height: 44px; grid-template-columns: 44px minmax(30px, auto) 44px; }
+}
+
+/* ---------------------------------------------------------------------------
+   PRODUCT TITLE TAP TARGET
+   On a listing page the title is a primary way through to the product, not a
+   secondary one, and eight of them at text height is eight 20px targets in a
+   column. The photograph above each card is still the larger target; this
+   makes the title a real one too. The negative margin keeps the card's
+   vertical rhythm unchanged while the hit area grows.
+--------------------------------------------------------------------------- */
+.card__body > a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  margin-block: -12px;
+}
+
+/* The legal row sits at text height. It is rarely tapped, but "rarely" is not
+   "never" and these are the links people reach for when something has gone
+   wrong with an order. */
+.footer__legal a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
