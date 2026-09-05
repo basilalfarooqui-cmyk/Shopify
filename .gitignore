@@ -1,0 +1,18 @@
+# The reference screenshots are 748 MB and are working material, not part of
+# the site. Excluded so the repository stays small enough to clone quickly.
+landing-page-references/
+
+# Scratch + OS noise
+_qa/
+logs/watchdog.log
+logs/resume-output.log
+logs/resume-error.log
+logs/.watchdog.pid
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Half-built when the build was paused: the stylesheet and home page exist but
+# its two product pages do not, so its internal links would 404. Excluded until
+# the design is finished.
+category-variations/clothing/design-2/

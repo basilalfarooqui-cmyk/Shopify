@@ -1,0 +1,217 @@
+/* ===========================================================================
+   KOSHA — themes.css
+   Six category moods. Each theme changes palette, display typeface and a few
+   surface treatments; the page structure underneath is identical, so a
+   product page stays predictable while the category still feels its own.
+
+   Applied by putting the class on <body>, e.g. <body class="t-jewellery">.
+   =========================================================================== */
+
+/* ---------------------------------------------------------------------------
+   01 — JEWELLERY & ACCESSORIES
+   Elegant, refined, luxury. Deep ink on warm ivory, antique-gold accent,
+   a high-contrast serif for display. Wide letter-spacing, lots of air.
+--------------------------------------------------------------------------- */
+.t-jewellery {
+  --paper:      #faf7f2;
+  --paper-2:    #f2ece2;
+  --paper-3:    #e9e1d3;
+  --surface:    #fffdfa;
+  --ink:        #191410;
+  --ink-2:      #4d443a;
+  --ink-3:      #8a7d6c;
+  --line:       #e4dbcb;
+  --line-strong:#cbbfa9;
+
+  --accent:     #8a6a34;         /* antique gold */
+  --accent-ink: #fffdfa;
+  --accent-soft:#f5efe2;
+  --accent-line:#ddd0b6;
+
+  --font-display: 'Boska', 'Gambetta', Georgia, 'Times New Roman', serif;
+}
+.t-jewellery .pdp__title { font-weight: 400; letter-spacing: -.015em; line-height: 1.02; }
+.t-jewellery .display    { font-weight: 400; letter-spacing: -.015em; }
+.t-jewellery .btn        { letter-spacing: .12em; font-size: var(--t-xs); }
+.t-jewellery .header__logo { letter-spacing: .26em; font-weight: 400; }
+.t-jewellery .eyebrow    { letter-spacing: .2em; }
+.t-jewellery .media, .t-jewellery .gallery__slide { border-radius: 0; }
+.t-jewellery .btn, .t-jewellery .pill, .t-jewellery .pdp__panel { border-radius: 0; }
+
+/* ---------------------------------------------------------------------------
+   02 — BEAUTY & PERSONAL CARE
+   Soft, clean, warm. Blush-tinted paper, a muted rose clay accent and a
+   gentle bookish serif. Rounder shapes than the rest of the store.
+--------------------------------------------------------------------------- */
+.t-beauty {
+  --paper:      #fdf8f5;
+  --paper-2:    #f8ece6;
+  --paper-3:    #f1ded5;
+  --surface:    #ffffff;
+  --ink:        #2a1e1a;
+  --ink-2:      #6b564e;
+  --ink-3:      #9c847b;
+  --line:       #f0e0d8;
+  --line-strong:#dcc3b8;
+
+  --accent:     #b46b58;         /* rose clay */
+  --accent-ink: #ffffff;
+  --accent-soft:#faeee8;
+  --accent-line:#e8cec2;
+
+  --font-display: 'Gambetta', 'Sentient', Georgia, serif;
+  --r-sm: 8px;
+  --r-md: 14px;
+}
+.t-beauty .display, .t-beauty .pdp__title { font-weight: 500; letter-spacing: -.018em; }
+.t-beauty .btn { border-radius: var(--r-pill); letter-spacing: .08em; }
+.t-beauty .pill { border-radius: var(--r-pill); }
+.t-beauty .media, .t-beauty .gallery__slide, .t-beauty .card__media { border-radius: 14px; }
+.t-beauty .pdp__panel { border-radius: 14px; }
+.t-beauty .rev, .t-beauty .tag { border-radius: 14px; }
+
+/* ---------------------------------------------------------------------------
+   03 — HOME & KITCHEN
+   Warm and inviting. Oat paper, terracotta accent, a serif with a bit of
+   texture. Slightly heavier rules, like a well-used recipe card.
+--------------------------------------------------------------------------- */
+.t-kitchen {
+  --paper:      #fbf7f0;
+  --paper-2:    #f3ece0;
+  --paper-3:    #eae0cf;
+  --surface:    #fffdf8;
+  --ink:        #211a13;
+  --ink-2:      #55483a;
+  --ink-3:      #8b7c68;
+  --line:       #e8ded0;
+  --line-strong:#d0c1aa;
+
+  --accent:     #b3502e;         /* terracotta */
+  --accent-ink: #fffdf8;
+  --accent-soft:#f7ece1;
+  --accent-line:#e0cbb6;
+
+  --font-display: 'Erode', 'Gambetta', Georgia, serif;
+  --r-sm: 4px;
+}
+.t-kitchen .display, .t-kitchen .pdp__title { font-weight: 600; letter-spacing: -.02em; }
+.t-kitchen .eyebrow { color: var(--accent); }
+.t-kitchen .eyebrow::before { background: var(--accent-line); }
+.t-kitchen .btn { letter-spacing: .07em; }
+
+/* ---------------------------------------------------------------------------
+   04 — HOME & FURNITURE
+   Warm, refined, tactile. Stone-grey paper, deep forest accent, a confident
+   grotesk. Squarer shapes, generous whitespace, architectural feel.
+--------------------------------------------------------------------------- */
+.t-furniture {
+  --paper:      #f7f5f1;
+  --paper-2:    #edeae3;
+  --paper-3:    #e2ded4;
+  --surface:    #fdfcfa;
+  --ink:        #1b1c19;
+  --ink-2:      #4b4e47;
+  --ink-3:      #82857c;
+  --line:       #e0ddd5;
+  --line-strong:#c6c3b8;
+
+  --accent:     #33473c;         /* forest */
+  --accent-ink: #f7f5f1;
+  --accent-soft:#eaeee9;
+  --accent-line:#c9d2cb;
+
+  --font-display: 'Cabinet Grotesk', 'Switzer', ui-sans-serif, sans-serif;
+  --r-sm: 2px;
+}
+.t-furniture .display, .t-furniture .pdp__title { font-weight: 700; letter-spacing: -.035em; }
+.t-furniture .btn, .t-furniture .pill, .t-furniture .media,
+.t-furniture .gallery__slide, .t-furniture .pdp__panel { border-radius: 2px; }
+.t-furniture .section-head { border-bottom-width: 1px; }
+
+/* ---------------------------------------------------------------------------
+   05 — ELECTRONICS & ACCESSORIES
+   Sleek, techy, modern — and the only dark theme in the store. Near-black
+   ground, electric-blue accent, a tight grotesk with mono detailing.
+--------------------------------------------------------------------------- */
+.t-electronics {
+  --paper:      #0e0f12;
+  --paper-2:    #16181d;
+  --paper-3:    #1e2128;
+  --surface:    #14161a;
+  --ink:        #f2f4f7;
+  --ink-2:      #a8aeb9;
+  --ink-3:      #767d8a;
+  --ink-4:      #565c67;
+  --line:       #23262e;
+  --line-strong:#343945;
+
+  --accent:     #4d7dff;         /* electric blue */
+  --accent-ink: #ffffff;
+  --accent-soft:#151a26;
+  --accent-line:#2a3550;
+
+  --star:       #f2f4f7;
+  --sale:       #ff6b52;
+  --positive:   #4ad991;
+
+  --font-display: 'Supreme', 'Switzer', ui-sans-serif, sans-serif;
+  --r-sm: 6px;
+
+  --sh-2: 0 2px 6px rgba(0,0,0,.5);
+  --sh-3: 0 12px 28px -12px rgba(0,0,0,.7);
+  --sh-4: 0 32px 64px -24px rgba(0,0,0,.8);
+}
+.t-electronics { background: var(--paper); color: var(--ink); }
+.t-electronics .display, .t-electronics .pdp__title { font-weight: 700; letter-spacing: -.035em; }
+.t-electronics .announce { background: #000; }
+.t-electronics .header { background: var(--paper); }
+.t-electronics .footer { background: #08090b; }
+.t-electronics img { background-color: var(--paper-2); }
+.t-electronics .media, .t-electronics .gallery__stage { background: var(--paper-2); }
+.t-electronics .btn { --btn-bg: var(--ink); --btn-fg: #0e0f12; --btn-bd: var(--ink); }
+.t-electronics .btn:hover { --btn-bg: var(--accent); --btn-fg: #fff; --btn-bd: var(--accent); }
+.t-electronics .btn--ghost { --btn-bg: transparent; --btn-fg: var(--ink); --btn-bd: var(--line-strong); }
+.t-electronics .btn--ghost:hover { --btn-bg: var(--ink); --btn-fg: #0e0f12; }
+.t-electronics .pill[aria-checked="true"] { background: var(--ink); color: #0e0f12; border-color: var(--ink); }
+.t-electronics .swatch::after { border-color: var(--ink); }
+.t-electronics .rv__fill { background: var(--accent); }
+.t-electronics ::selection { background: var(--accent); color: #fff; }
+.t-electronics .burger__line { background: var(--ink); }
+.t-electronics .footer__signup button { background: var(--ink); border-color: var(--ink); color: #0e0f12; }
+
+/* ---------------------------------------------------------------------------
+   06 — GENERAL MERCHANDISE
+   Playful, fun, energetic — and still polished. Bright paper, a saturated
+   cobalt accent, a heavy display face and pill shapes. Colour does the
+   shouting; the layout stays disciplined so it never reads cheap.
+--------------------------------------------------------------------------- */
+.t-general {
+  --paper:      #fdfcf8;
+  --paper-2:    #f3f1e8;
+  --paper-3:    #eae7d9;
+  --surface:    #ffffff;
+  --ink:        #16161a;
+  --ink-2:      #4a4a52;
+  --ink-3:      #85858f;
+  --line:       #e6e3d8;
+  --line-strong:#cbc7b7;
+
+  --accent:     #2b4de0;         /* cobalt */
+  --accent-ink: #ffffff;
+  --accent-soft:#eef0fd;
+  --accent-line:#c3ccf7;
+
+  --sale:       #e0452b;
+
+  --font-display: 'Clash Display', 'Cabinet Grotesk', ui-sans-serif, sans-serif;
+  --r-sm: 10px;
+}
+.t-general .display, .t-general .pdp__title { font-weight: 600; letter-spacing: -.028em; }
+.t-general .btn { border-radius: var(--r-pill); letter-spacing: .07em; }
+.t-general .pill { border-radius: var(--r-pill); }
+.t-general .media, .t-general .gallery__slide, .t-general .card__media { border-radius: 12px; }
+.t-general .pdp__panel, .t-general .rev { border-radius: 12px; }
+.t-general .tag--accent { background: var(--accent); }
+.t-general .eyebrow { color: var(--accent); }
+.t-general .eyebrow::before { background: var(--accent-line); }
+.t-general .cat__name, .t-general .hero__title { letter-spacing: -.03em; }

@@ -1,0 +1,106 @@
+/* ===========================================================================
+   KOSHA — contact.css
+   Styles used only by the Contact page.
+   =========================================================================== */
+
+/* --- page head ----------------------------------------------------------- */
+.pagehead {
+  border-bottom: 1px solid var(--line);
+  padding-block: clamp(40px, 6vw, 88px) clamp(32px, 4.5vw, 64px);
+}
+.pagehead__inner { display: grid; gap: var(--s-4); max-width: 760px; }
+
+/* --- the three ways to reach us ----------------------------------------- */
+.ways { display: grid; gap: var(--s-4); grid-template-columns: 1fr; }
+@media (min-width: 780px) { .ways { grid-template-columns: repeat(3, 1fr); } }
+
+.way {
+  display: grid;
+  gap: var(--s-3);
+  align-content: start;
+  padding: var(--s-6);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  transition: border-color var(--dur-2) var(--ease),
+              transform var(--dur-2) var(--ease-out),
+              box-shadow var(--dur-2) var(--ease);
+}
+.way:hover { border-color: var(--line-strong); transform: translateY(-2px); box-shadow: var(--sh-2); }
+.way__icon {
+  display: grid; place-items: center;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.way__icon svg { width: 19px; height: 19px; stroke-width: 1.6; }
+.way h3 { font-size: var(--t-md); font-weight: 500; }
+.way p  { font-size: var(--t-sm); color: var(--ink-2); }
+.way .link { font-size: var(--t-sm); font-weight: 500; margin-top: 2px; justify-self: start; }
+.way__hours { font-size: var(--t-xs); color: var(--ink-3); }
+
+/* --- form + aside ------------------------------------------------------- */
+.contact {
+  display: grid;
+  gap: var(--s-8);
+}
+@media (min-width: 900px) {
+  .contact { grid-template-columns: minmax(0, 1.4fr) minmax(260px, 1fr); gap: clamp(48px, 6vw, 96px); }
+}
+
+.form { display: grid; gap: var(--s-5); }
+.field { display: grid; gap: 7px; }
+.field > label {
+  font-size: var(--t-xs); font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 13px var(--s-4);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  font-size: var(--t-base);
+  transition: border-color var(--dur-1) var(--ease), box-shadow var(--dur-1) var(--ease);
+}
+.field textarea { min-height: 148px; resize: vertical; line-height: 1.6; }
+.field select { appearance: none; cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23857a71' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center; background-size: 15px;
+  padding-right: 40px;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 14%, transparent);
+}
+.field__hint { font-size: var(--t-xs); color: var(--ink-3); }
+
+.form__row { display: grid; gap: var(--s-5); }
+@media (min-width: 620px) { .form__row { grid-template-columns: 1fr 1fr; } }
+
+/* --- aside panels ------------------------------------------------------- */
+.panel {
+  padding: var(--s-6);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--paper-2);
+  display: grid;
+  gap: var(--s-4);
+  align-content: start;
+}
+.panel h3 { font-size: var(--t-md); font-weight: 500; }
+.panel dl { display: grid; gap: 10px; }
+.panel dt { font-size: var(--t-xs); color: var(--ink-3); letter-spacing: .06em; text-transform: uppercase; }
+.panel dd { font-size: var(--t-sm); color: var(--ink); margin: 0; }
+.panel + .panel { margin-top: var(--s-4); }
+
+/* --- FAQ ---------------------------------------------------------------- */
+.faq { border-top: 1px solid var(--line); }
+.faq .acc__panel p + p { margin-top: var(--s-3); }

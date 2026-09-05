@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kosha — Everyday things, chosen well</title>
+<meta name="description" content="Kosha curates jewellery, beauty, kitchen, furniture, electronics and everyday essentials — a short, considered edit of things worth owning. Free shipping over ₹999.">
+<meta name="theme-color" content="#14110f">
+
+<!-- Self-hosted webfonts (see Shopify/assets/fonts). On Shopify these become
+     asset_url references in the theme's snippets/fonts.liquid -->
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     ANNOUNCEMENT BAR  → Shopify: sections/announcement-bar.liquid
+     ═══════════════════════════════════════════════════════════════════ -->
+<div class="announce">
+  <div class="announce__track">
+    <div class="announce__group">
+      <span class="announce__item">Free shipping over ₹999</span>
+      <span class="announce__item">Cash on delivery available</span>
+      <span class="announce__item">7-day easy returns</span>
+      <span class="announce__item">Dispatched in 24 hours</span>
+      <span class="announce__item">Trusted by 12,000+ customers</span>
+    </div>
+    <div class="announce__group" aria-hidden="true">
+      <span class="announce__item">Free shipping over ₹999</span>
+      <span class="announce__item">Cash on delivery available</span>
+      <span class="announce__item">7-day easy returns</span>
+      <span class="announce__item">Dispatched in 24 hours</span>
+      <span class="announce__item">Trusted by 12,000+ customers</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     HEADER  → Shopify: sections/header.liquid
+     Sticky; gains a hairline and a blur once the page scrolls.
+     Add `header--overlay` on pages whose hero photograph runs full-bleed.
+     ═══════════════════════════════════════════════════════════════════ -->
+<header class="header" data-header>
+  <div class="wrap header__inner">
+
+    <div class="header__left">
+      <button class="burger" data-drawer-open="nav-drawer" data-burger
+              aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu">
+        <span class="burger__box">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </span>
+      </button>
+
+      <nav class="nav" aria-label="Primary">
+        <div class="nav__item" data-mega-item>
+          <a class="nav__link has-menu" href="#categories" data-mega-trigger aria-expanded="false">
+            Shop
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+
+          <!-- mega menu -->
+          <div class="mega">
+            <div class="wrap mega__inner">
+              <div class="mega__cols">
+                <div class="mega__group">
+                  <p class="eyebrow is-plain">Categories</p>
+                  <ul class="mega__list">
+                    <li><a href="products/jewellery.html">Jewellery &amp; Accessories</a></li>
+                    <li><a href="products/beauty.html">Beauty &amp; Personal Care</a></li>
+                    <li><a href="products/kitchen.html">Home &amp; Kitchen</a></li>
+                    <li><a href="products/furniture.html">Home &amp; Furniture</a></li>
+                    <li><a href="products/electronics.html">Electronics &amp; Accessories</a></li>
+                    <li><a href="products/general.html">General Merchandise</a></li>
+                  </ul>
+                </div>
+                <div class="mega__group">
+                  <p class="eyebrow is-plain">Edits</p>
+                  <ul class="mega__list">
+                    <li><a href="#bestsellers">Best sellers</a></li>
+                    <li><a href="#new">New this week</a></li>
+                    <li><a href="#categories">Under ₹999</a></li>
+                    <li><a href="#categories">Gifting</a></li>
+                    <li><a href="#categories">Festive picks</a></li>
+                  </ul>
+                </div>
+                <div class="mega__group">
+                  <p class="eyebrow is-plain">Help</p>
+                  <ul class="mega__list">
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="contact.html#faq">Shipping &amp; returns</a></li>
+                    <li><a href="contact.html#faq">Track an order</a></li>
+                    <li><a href="contact.html#faq">Size &amp; care</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mega__feature">
+                <a class="mega__card" href="products/jewellery.html">
+                  <div class="media ar-4-5 media--zoom"><img src="assets/img/jewel-04.jpg" alt="Layered gold pendant necklace" loading="lazy"></div>
+                  <h4>The Jewellery Edit</h4>
+                  <p>Everyday gold, 22 pieces</p>
+                </a>
+                <a class="mega__card" href="products/electronics.html">
+                  <div class="media ar-4-5 media--zoom"><img src="assets/img/tech-01.jpg" alt="Over-ear headphones" loading="lazy"></div>
+                  <h4>Sound &amp; Charge</h4>
+                  <p>Audio and power essentials</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a class="nav__link" href="#bestsellers">Best sellers</a>
+        <a class="nav__link" href="#story">About</a>
+        <a class="nav__link" href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <a class="header__logo" href="index.html">Kosha</a>
+
+    <div class="header__right">
+      <a class="header__act hide-mobile" href="#" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </a>
+      <a class="header__act hide-mobile" href="contact.html" aria-label="Account">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg>
+      </a>
+      <button class="header__act" data-drawer-open="cart-drawer" aria-label="Open bag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>
+        <span class="cart-count" data-cart-count>0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     DRAWERS (mobile nav + bag)  → Shopify: snippets/drawers.liquid
+     ═══════════════════════════════════════════════════════════════════ -->
+<div class="scrim" data-scrim></div>
+
+<aside class="drawer drawer--left" id="nav-drawer" aria-hidden="true" aria-label="Menu">
+  <div class="drawer__head">
+    <span class="drawer__title">Menu</span>
+    <button class="icon-btn" data-drawer-close aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="drawer__body">
+    <ul class="mnav">
+      <li class="mnav__item">
+        <button class="mnav__link" data-mnav-toggle aria-expanded="false">
+          Shop
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="mnav__sub"><div>
+          <a href="products/jewellery.html">Jewellery &amp; Accessories</a>
+          <a href="products/beauty.html">Beauty &amp; Personal Care</a>
+          <a href="products/kitchen.html">Home &amp; Kitchen</a>
+          <a href="products/furniture.html">Home &amp; Furniture</a>
+          <a href="products/electronics.html">Electronics &amp; Accessories</a>
+          <a href="products/general.html">General Merchandise</a>
+        </div></div>
+      </li>
+      <li class="mnav__item">
+        <button class="mnav__link" data-mnav-toggle aria-expanded="false">
+          Edits
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="mnav__sub"><div>
+          <a href="#bestsellers">Best sellers</a>
+          <a href="#new">New this week</a>
+          <a href="#categories">Under ₹999</a>
+          <a href="#categories">Gifting</a>
+        </div></div>
+      </li>
+      <li class="mnav__item"><a class="mnav__link" href="#story">About</a></li>
+      <li class="mnav__item"><a class="mnav__link" href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="stack" style="margin-top:var(--s-7)">
+      <p class="eyebrow is-plain">Need a hand?</p>
+      <p class="t-meta">Mon–Sat, 10am–7pm IST<br><a class="link" href="mailto:hello@kosha.store">hello@kosha.store</a></p>
+    </div>
+  </div>
+</aside>
+
+<aside class="drawer drawer--right" id="cart-drawer" aria-hidden="true" aria-label="Shopping bag">
+  <div class="drawer__head">
+    <span class="drawer__title">Your bag</span>
+    <button class="icon-btn" data-drawer-close aria-label="Close bag">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="drawer__body" data-cart-body></div>
+  <div class="drawer__foot" data-cart-foot hidden>
+    <div class="cart-total">
+      <span class="t-meta">Subtotal</span>
+      <strong data-cart-total>₹0</strong>
+    </div>
+    <p class="t-meta" style="margin-bottom:var(--s-4)">Shipping and taxes calculated at checkout.</p>
+    <button class="btn btn--block btn--lg">Checkout</button>
+  </div>
+</aside>
+
+<main id="main">
+
+  <!-- ═════════════════════════════════════════════════════════════════════
+       HERO  → Shopify: sections/hero-split.liquid
+       ═════════════════════════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow">Autumn edit — 2026</p>
+        <h1 class="hero__title">Everyday things,<br><em>chosen well.</em></h1>
+        <p class="t-lead">Six categories. A short list in each. We buy the pieces we would keep
+          ourselves, photograph them honestly, and ship them from Bengaluru within a day.</p>
+        <div class="hero__actions">
+          <a class="btn btn--lg" href="#categories">Shop the categories</a>
+          <a class="btn btn--ghost btn--lg" href="#bestsellers">See best sellers</a>
+        </div>
+        <div class="hero__stats">
+          <div class="hero__stat"><b>12,400+</b><span>Orders shipped</span></div>
+          <div class="hero__stat"><b>4.8 / 5</b><span>Average rating</span></div>
+          <div class="hero__stat"><b>24 hrs</b><span>Dispatch time</span></div>
+        </div>
+      </div>
+
+      <div class="hero__media">
+        <img src="assets/img/hero-main.jpg"
+             alt="A curated flatlay of jewellery, skincare and small home objects"
+             fetchpriority="high" width="1800" height="1200">
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════════
+       TRUST BAR  → Shopify: sections/trust-bar.liquid
+       ═════════════════════════════════════════════════════════════════ -->
+  <section class="trustbar">
+    <div class="wrap">
+      <div class="trustbar__grid">
+        <div class="trustbar__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h11v10H2z"/><path d="M13 10h4l3 3v4h-7z"/><circle cx="6" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg>
+          <h4>Free shipping over ₹999</h4>
+          <p>Flat ₹59 below that</p>
+        </div>
+        <div class="trustbar__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5l8-3 8 3v6c0 5-3.4 9-8 11-4.6-2-8-6-8-11z"/><path d="M9 12l2 2 4-4"/></svg>
+          <h4>7-day returns</h4>
+          <p>No-questions exchange</p>
+        </div>
+        <div class="trustbar__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20"/></svg>
+          <h4>Cash on delivery</h4>
+          <p>Available across India</p>
+        </div>
+        <div class="trustbar__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18v-6a8 8 0 0116 0v6"/><path d="M20 19a2 2 0 01-2 2h-2"/><rect x="2" y="13" width="4" height="6" rx="1.4"/><rect x="18" y="13" width="4" height="6" rx="1.4"/></svg>
+          <h4>Real people</h4>
+          <p>WhatsApp support, 10–7</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════════
+       CATEGORY NAVIGATION  → Shopify: sections/collection-grid.liquid
+       Each tile links to that category's product page.
+       ═════════════════════════════════════════════════════════════════ -->
+  <section class="section" id="categories">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow">Browse</p>
+          <h2 class="display t-h2">Six categories, edited short</h2>
+        </div>
+        <p class="t-meta hide-mobile" style="max-width:34ch">Every category has its own look —
+          because a lamp and a lipstick do not deserve the same page.</p>
+      </div>
+
+      <div class="cats__grid" data-reveal-group data-reveal-step="60">
+
+        <a class="cat reveal" href="products/jewellery.html">
+          <img src="assets/img/jewel-hero.jpg" alt="Pearl necklace resting in a jewellery box" loading="lazy">
+          <span class="cat__label">
+            <span class="cat__n">01 — 22 pieces</span>
+            <span class="cat__name">Jewellery &amp;<br>Accessories</span>
+            <span class="cat__go">Shop the edit
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </span>
+        </a>
+
+        <a class="cat reveal" href="products/beauty.html">
+          <img src="assets/img/beauty-hero.jpg" alt="Skincare and make-up flatlay" loading="lazy">
+          <span class="cat__label">
+            <span class="cat__n">02 — 31 pieces</span>
+            <span class="cat__name">Beauty &amp; Personal Care</span>
+            <span class="cat__go">Shop the edit
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </span>
+        </a>
+
+        <a class="cat reveal" href="products/kitchen.html">
+          <img src="assets/img/kitchen-hero.jpg" alt="Enamelled cast-iron casserole" loading="lazy">
+          <span class="cat__label">
+            <span class="cat__n">03 — 28 pieces</span>
+            <span class="cat__name">Home &amp; Kitchen</span>
+            <span class="cat__go">Shop the edit
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </span>
+        </a>
+
+        <a class="cat reveal" href="products/furniture.html">
+          <img src="assets/img/furniture-hero.jpg" alt="A burnt-orange sofa in a light room" loading="lazy">
+          <span class="cat__label">
+            <span class="cat__n">04 — 17 pieces</span>
+            <span class="cat__name">Home &amp; Furniture</span>
+            <span class="cat__go">Shop the edit
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </span>
+        </a>
+
+        <a class="cat reveal" href="products/electronics.html">
+          <img src="assets/img/tech-hero.jpg" alt="Headphones on a dark surface" loading="lazy">
+          <span class="cat__label">
+            <span class="cat__n">05 — 24 pieces</span>
+            <span class="cat__name">Electronics &amp;<br>Accessories</span>
+            <span class="cat__go">Shop the edit
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </span>
+        </a>
+
+        <a class="cat reveal" href="products/general.html">
+          <img src="assets/img/general-hero.jpg" alt="A handheld games console on a yellow background" loading="lazy">
+          <span class="cat__label">
+            <span class="cat__n">06 — 40 pieces</span>
+            <span class="cat__name">General Merchandise</span>
+            <span class="cat__go">Shop the edit
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════════
+       BEST SELLERS RAIL  → Shopify: sections/featured-collection.liquid
+       Card data attributes feed the quick-add; on Shopify they map to
+       {{ product.id }}, {{ product.title }}, {{ variant.price }} etc.
+       ═════════════════════════════════════════════════════════════════ -->
+  <section class="section-b" id="bestsellers">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow">Moving fast</p>
+          <h2 class="display t-h2">This week's best sellers</h2>
+        </div>
+        <a class="link t-meta" href="#categories">View all &rarr;</a>
+      </div>
+
+      <div class="rail" data-reveal-group data-reveal-step="55">
+
+        <article class="card reveal">
+          <a href="products/jewellery.html" class="card__media">
+            <div class="media ar-4-5 media--zoom"><img src="assets/img/jewel-04.jpg" alt="Crescent pendant necklace" loading="lazy"></div>
+            <div class="card__alt"><img src="assets/img/jewel-01.jpg" alt="" loading="lazy"></div>
+            <span class="card__badges"><span class="tag tag--solid">Best seller</span></span>
+          </a>
+          <div class="card__quick">
+            <button class="btn btn--light btn--sm btn--block" data-quick-add
+              data-id="ko-jw-01" data-title="Meridian Crescent Pendant" data-variant="Gold / 18&quot;"
+              data-price="1290" data-img="assets/img/jewel-04.jpg" data-url="products/jewellery.html">Quick add</button>
+          </div>
+          <div class="card__body">
+            <a href="products/jewellery.html"><h3 class="card__title">Meridian Crescent Pendant</h3></a>
+            <p class="card__meta">18k gold vermeil · 3 lengths</p>
+            <p class="price"><span class="price__now num">₹1,290</span><span class="price__was num">₹1,890</span><span class="price__off">32% off</span></p>
+            <span class="card__swatches">
+              <i class="card__swatch" style="background:#c9a25f"></i>
+              <i class="card__swatch" style="background:#cfd2d4"></i>
+              <i class="card__swatch" style="background:#e8c2b0"></i>
+            </span>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <a href="products/electronics.html" class="card__media">
+            <div class="media ar-4-5 media--zoom"><img src="assets/img/tech-04.jpg" alt="Wireless over-ear headphones" loading="lazy"></div>
+            <div class="card__alt"><img src="assets/img/tech-01.jpg" alt="" loading="lazy"></div>
+          </a>
+          <div class="card__quick">
+            <button class="btn btn--light btn--sm btn--block" data-quick-add
+              data-id="ko-el-01" data-title="Halo ANC Headphones" data-variant="Midnight"
+              data-price="2490" data-img="assets/img/tech-04.jpg" data-url="products/electronics.html">Quick add</button>
+          </div>
+          <div class="card__body">
+            <a href="products/electronics.html"><h3 class="card__title">Halo ANC Headphones</h3></a>
+            <p class="card__meta">40h battery · Active noise cancelling</p>
+            <p class="price"><span class="price__now num">₹2,490</span><span class="price__was num">₹3,499</span><span class="price__off">29% off</span></p>
+            <span class="card__swatches">
+              <i class="card__swatch" style="background:#1b1b1e"></i>
+              <i class="card__swatch" style="background:#e7e4df"></i>
+            </span>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <a href="products/kitchen.html" class="card__media">
+            <div class="media ar-4-5 media--zoom"><img src="assets/img/kitchen-hero.jpg" alt="Red enamelled casserole" loading="lazy"></div>
+            <div class="card__alt"><img src="assets/img/kitchen-06.jpg" alt="" loading="lazy"></div>
+            <span class="card__badges"><span class="tag tag--sale">Low stock</span></span>
+          </a>
+          <div class="card__quick">
+            <button class="btn btn--light btn--sm btn--block" data-quick-add
+              data-id="ko-kt-01" data-title="Hearth Cast-Iron Casserole" data-variant="Chilli red / 4.2L"
+              data-price="3450" data-img="assets/img/kitchen-hero.jpg" data-url="products/kitchen.html">Quick add</button>
+          </div>
+          <div class="card__body">
+            <a href="products/kitchen.html"><h3 class="card__title">Hearth Cast-Iron Casserole</h3></a>
+            <p class="card__meta">4.2L · Oven safe to 260°C</p>
+            <p class="price"><span class="price__now num">₹3,450</span><span class="price__was num">₹4,999</span><span class="price__off">31% off</span></p>
+            <span class="card__swatches">
+              <i class="card__swatch" style="background:#b8382a"></i>
+              <i class="card__swatch" style="background:#33413a"></i>
+              <i class="card__swatch" style="background:#e6e1d8"></i>
+            </span>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <a href="products/beauty.html" class="card__media">
+            <div class="media ar-4-5 media--zoom"><img src="assets/img/beauty-08.jpg" alt="Serum and cream bottles" loading="lazy"></div>
+            <div class="card__alt"><img src="assets/img/beauty-04.jpg" alt="" loading="lazy"></div>
+          </a>
+          <div class="card__quick">
+            <button class="btn btn--light btn--sm btn--block" data-quick-add
+              data-id="ko-bt-01" data-title="Quiet Hours Night Serum" data-variant="30ml"
+              data-price="890" data-img="assets/img/beauty-08.jpg" data-url="products/beauty.html">Quick add</button>
+          </div>
+          <div class="card__body">
+            <a href="products/beauty.html"><h3 class="card__title">Quiet Hours Night Serum</h3></a>
+            <p class="card__meta">30ml · Niacinamide + squalane</p>
+            <p class="price"><span class="price__now num">₹890</span></p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════════
+       STORY / HOW IT WORKS  → Shopify: sections/rich-text-image.liquid
+       ═════════════════════════════════════════════════════════════════ -->
+  <section class="section" id="story" style="background:var(--paper-2)">
+    <div class="wrap">
+      <div class="split">
+        <div class="split__media reveal">
+          <div class="media ar-4-5"><img src="assets/img/lifestyle-02.jpg" alt="Inside the Kosha studio" loading="lazy"></div>
+        </div>
+        <div class="split__copy reveal">
+          <p class="eyebrow">How Kosha works</p>
+          <h2 class="display t-h2">A small team, a short list, an honest price.</h2>
+          <p class="t-lead">We are not a marketplace. Each piece is bought in, checked by hand,
+            and photographed as it actually arrives — so what you see is what lands at your door.</p>
+
+          <div class="steps">
+            <div class="step">
+              <span class="step__n">01</span>
+              <div>
+                <h4>We choose</h4>
+                <p>A handful of pieces a month, picked for how they hold up rather than how they photograph.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step__n">02</span>
+              <div>
+                <h4>We check</h4>
+                <p>Every order is opened, inspected and packed by a person before it leaves the studio.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step__n">03</span>
+              <div>
+                <h4>We ship in a day</h4>
+                <p>Dispatched within 24 hours, tracked end to end, with returns open for a week.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cluster" style="margin-top:var(--s-2)">
+            <a class="btn" href="#categories">Start browsing</a>
+            <a class="link t-meta" href="contact.html">Questions? Talk to us &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════════
+       NEW THIS WEEK  → Shopify: sections/featured-collection.liquid
+       ═════════════════════════════════════════════════════════════════ -->
+  <section class="section" id="new">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow">Just landed</p>
+          <h2 class="display t-h2">New this week</h2>
+        </div>
+        <a class="link t-meta" href="#categories">View all &rarr;</a>
+      </div>
+
+      <div class="rail" data-reveal-group data-reveal-step="55">
+
+        <article class="card reveal">
+          <a href="products/furniture.html" class="card__media">
+            <div class="media ar-4-5 media--zoom"><img src="assets/img/furniture-03.jpg" alt="Brass pendant lights" loading="lazy"></div>
+            <div class="card__alt"><img src="assets/img/furniture-04.jpg" alt="" loading="lazy"></div>
+            <span class="card__badges"><span class="tag">New</span></span>
+          </a>
+          <div class="card__quick">
+            <button class="btn btn--light btn--sm btn--block" data-quick-add
+              data-id="ko-fn-01" data-title="Dune Brass Pendant" data-variant="Aged brass"
+              data-price="2890" data-img="assets/img/furniture-03.jpg" data-url="products/furniture.html">Quick add</button>
+          </div>
+          <div class="card__body">
+            <a href="products/furniture.html"><h3 class="card__title">Dune Brass Pendant</h3></a>
+            <p class="card__meta">Hand-spun · E27 fitting</p>
+            <p class="price"><span class="price__now num">₹2,890</span></p>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <a href="products/general.html" class="card__media">
+            <div class="media ar-4-5 media--zoom"><img src="assets/img/general-03.jpg" alt="Black acetate sunglasses" loading="lazy"></div>
+            <div class="card__alt"><img src="assets/img/general-04.jpg" alt="" loading="lazy"></div>
+            <span class="card__badges"><span class="tag">New</span></span>
+          </a>
+          <div class="card__quick">
+            <button class="btn btn--light btn--sm btn--block" data-quick-add
+              data-id="ko-gn-01" data-title="Ferry Acetate Sunglasses" data-variant="Matte black"
+              data-price="1150" data-img="assets/img/general-03.jpg" data-url="products/general.html">Quick add</button>
+          </div>
+          <div class="card__body">
+            <a href="products/general.html"><h3 class="card__title">Ferry Acetate Sunglasses</h3></a>
+            <p class="card__meta">UV400 · Polarised</p>
+            <p class="price"><span class="price__now num">₹1,150</span></p>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <a href="products/kitchen.html" class="card__media">
+            <div class="media ar-4-5 media--zoom"><img src="assets/img/kitchen-05.jpg" alt="Sage green insulated bottle" loading="lazy"></div>
+            <div class="card__alt"><img src="assets/img/kitchen-01.jpg" alt="" loading="lazy"></div>
+          </a>
+          <div class="card__quick">
+            <button class="btn btn--light btn--sm btn--block" data-quick-add
+              data-id="ko-kt-02" data-title="Still Insulated Bottle" data-variant="Sage / 750ml"
+              data-price="749" data-img="assets/img/kitchen-05.jpg" data-url="products/kitchen.html">Quick add</button>
+          </div>
+          <div class="card__body">
+            <a href="products/kitchen.html"><h3 class="card__title">Still Insulated Bottle</h3></a>
+            <p class="card__meta">750ml · 18h cold, 9h hot</p>
+            <p class="price"><span class="price__now num">₹749</span></p>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <a href="products/electronics.html" class="card__media">
+            <div class="media ar-4-5 media--zoom"><img src="assets/img/tech-03.jpg" alt="True wireless earbuds" loading="lazy"></div>
+            <div class="card__alt"><img src="assets/img/tech-08.jpg" alt="" loading="lazy"></div>
+          </a>
+          <div class="card__quick">
+            <button class="btn btn--light btn--sm btn--block" data-quick-add
+              data-id="ko-el-02" data-title="Drift Wireless Earbuds" data-variant="Ivory"
+              data-price="1690" data-img="assets/img/tech-03.jpg" data-url="products/electronics.html">Quick add</button>
+          </div>
+          <div class="card__body">
+            <a href="products/electronics.html"><h3 class="card__title">Drift Wireless Earbuds</h3></a>
+            <p class="card__meta">32h with case · IPX5</p>
+            <p class="price"><span class="price__now num">₹1,690</span><span class="price__was num">₹2,299</span><span class="price__off">27% off</span></p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════════
+       QUOTE BAND  → Shopify: sections/image-banner.liquid
+       ═════════════════════════════════════════════════════════════════ -->
+  <section class="band">
+    <div class="band__bg"><img src="assets/img/editorial-02.jpg" alt="" loading="lazy"></div>
+    <div class="band__inner">
+      <p class="eyebrow on-dark">Why we started</p>
+      <blockquote class="band__quote">“Most of what we own, we barely notice.
+        The few things we do notice are worth choosing properly.”</blockquote>
+      <p class="t-meta" style="color:rgba(255,255,255,.72)">Aarav &amp; Meera — founders, Kosha</p>
+      <a class="btn btn--light" href="#story" style="margin-top:var(--s-2)">Read our story</a>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════════
+       REVIEWS  → Shopify: sections/testimonials.liquid  (later: a real
+       reviews app such as Judge.me / Loox renders into this block)
+       ═════════════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__title">
+          <p class="eyebrow">Customers</p>
+          <h2 class="display t-h2">4.8 out of 5, across 2,140 reviews</h2>
+        </div>
+        <div class="stars hide-mobile">
+          <span class="stars__row">
+            <span class="stars__bg">★★★★★</span>
+            <span class="stars__fg" style="width:96%">★★★★★</span>
+          </span>
+          <span>2,140 verified</span>
+        </div>
+      </div>
+
+      <div class="reviews__grid" data-reveal-group>
+        <article class="rev reveal">
+          <div class="stars"><span class="stars__row"><span class="stars__bg">★★★★★</span><span class="stars__fg" style="width:100%">★★★★★</span></span></div>
+          <p>“Ordered the crescent pendant on a Tuesday, wore it on Thursday. It looks exactly
+            like the photographs, which is more than I can say for most of what I buy online.”</p>
+          <div class="rev__who">
+            <img src="assets/img/avatar-01.jpg" alt="" loading="lazy">
+            <span><b>Ananya R.</b><span>Pune · Verified buyer</span></span>
+          </div>
+        </article>
+        <article class="rev reveal">
+          <div class="stars"><span class="stars__row"><span class="stars__bg">★★★★★</span><span class="stars__fg" style="width:100%">★★★★★</span></span></div>
+          <p>“The casserole is genuinely heavy — properly cast, not the thin stuff. Packed in
+            three layers of foam and it arrived in Guwahati without a scratch.”</p>
+          <div class="rev__who">
+            <img src="assets/img/avatar-02.jpg" alt="" loading="lazy">
+            <span><b>Rohit M.</b><span>Guwahati · Verified buyer</span></span>
+          </div>
+        </article>
+        <article class="rev reveal">
+          <div class="stars"><span class="stars__row"><span class="stars__bg">★★★★★</span><span class="stars__fg" style="width:90%">★★★★★</span></span></div>
+          <p>“I had to swap a size and someone actually replied on WhatsApp within an hour.
+            The replacement went out the same day. That is the whole reason I came back.”</p>
+          <div class="rev__who">
+            <img src="assets/img/avatar-03.jpg" alt="" loading="lazy">
+            <span><b>Fatima S.</b><span>Hyderabad · Verified buyer</span></span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════════════════
+       NEWSLETTER  → Shopify: sections/newsletter.liquid
+       ═════════════════════════════════════════════════════════════════ -->
+  <section class="section-tight" style="border-top:1px solid var(--line)">
+    <div class="wrap wrap-narrow">
+      <div class="signup">
+        <p class="eyebrow is-plain">Stay in the loop</p>
+        <h2 class="display t-h3">One email a month. New pieces, nothing else.</h2>
+        <form class="signup__form" data-demo-form="You're on the list — thanks!">
+          <label class="sr-only" for="nl">Email address</label>
+          <input id="nl" type="email" name="email" placeholder="you@example.com" required>
+          <button class="btn" type="submit">Join</button>
+        </form>
+        <p class="t-meta">No spam, and one-click unsubscribe. We never share your address.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     FOOTER  → Shopify: sections/footer.liquid
+     ═══════════════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="footer__word">Kosha</span>
+        <p class="t-meta" style="color:rgba(251,249,246,.62)">Everyday things, chosen well.
+          Packed by hand in Bengaluru and shipped across India.</p>
+        <form class="footer__signup" data-demo-form="You're on the list — thanks!">
+          <label class="sr-only" for="fnl">Email address</label>
+          <input id="fnl" type="email" placeholder="Email address" required>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+
+      <div class="footer__col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="products/jewellery.html">Jewellery &amp; Accessories</a></li>
+          <li><a href="products/beauty.html">Beauty &amp; Personal Care</a></li>
+          <li><a href="products/kitchen.html">Home &amp; Kitchen</a></li>
+          <li><a href="products/furniture.html">Home &amp; Furniture</a></li>
+          <li><a href="products/electronics.html">Electronics</a></li>
+          <li><a href="products/general.html">General Merchandise</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="contact.html#faq">Shipping &amp; delivery</a></li>
+          <li><a href="contact.html#faq">Returns &amp; exchanges</a></li>
+          <li><a href="contact.html#faq">Track your order</a></li>
+          <li><a href="contact.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#story">Our story</a></li>
+          <li><a href="index.html#bestsellers">Best sellers</a></li>
+          <li><a href="contact.html">Careers</a></li>
+          <li><a href="contact.html">Wholesale</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> Kosha Retail. All rights reserved.</span>
+      <span class="footer__legal">
+        <a href="contact.html">Privacy</a>
+        <a href="contact.html">Terms</a>
+        <a href="contact.html">Refund policy</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
