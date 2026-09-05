@@ -1,14 +1,29 @@
-# The reference screenshots are 748 MB and are working material, not part of
-# the site. Excluded so the repository stays small enough to clone quickly.
-landing-page-references/
+# ---------------------------------------------------------------------------
+# This repository publishes the MAIN STORE ONLY.
+#
+# Everything below still exists on the working machine — it is excluded from
+# the repository, not deleted. Removing an entry here brings that work back
+# into the published site.
+# ---------------------------------------------------------------------------
 
-# Scratch + OS noise
+# Other builds, not part of the store
+category-variations/
+niche-sites/
+review.html
+
+# Working material, not part of the site
+landing-page-references/
+tools/
+logs/
+PROJECT_BRIEF.md
+watchdog.ps1
+watchdog.sh
+.claude/
 _qa/
-logs/watchdog.log
-logs/resume-output.log
-logs/resume-error.log
-logs/.watchdog.pid
+main-store/assets/img/_sheet.html
+main-store/assets/images.manifest
+
+# OS noise
 Thumbs.db
 desktop.ini
 .DS_Store
-

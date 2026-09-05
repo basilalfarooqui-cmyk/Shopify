@@ -5,18 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kosha</title>
 
-<!-- The store itself lives in /main-store/ because its stylesheets, scripts
-     and photographs are all addressed relative to that folder. Rather than
-     duplicate the home page here and let the two drift apart, this file sends
-     visitors straight there.
+<!-- The store lives in /main-store/ because its stylesheets, scripts and
+     photographs are addressed relative to that folder. Rather than duplicate
+     the home page here and let the two drift apart, this sends visitors
+     straight there.
 
-     Three mechanisms, so it works even with scripting disabled:
-       1. the meta refresh below fires immediately
+     Three mechanisms, so it works with scripting disabled:
+       1. the meta refresh fires immediately
        2. the script fires first in practice and replaces the history entry,
           so Back does not bounce the visitor into a redirect loop
        3. the visible link is there if both are blocked
-
-     The full review index — all three phases, every page — is at /review.html
 -->
 <meta http-equiv="refresh" content="0; url=main-store/index.html">
 <link rel="canonical" href="main-store/index.html">
@@ -37,14 +35,12 @@
   }
   @keyframes spin{to{transform:rotate(360deg)}}
   @media (prefers-reduced-motion:reduce){.sp{animation:none}}
-  small{display:block;margin-top:20px;opacity:.55;font-size:13px}
 </style>
 </head>
 <body>
   <div>
     <div class="sp" aria-hidden="true"></div>
     <p>Opening the store… <a href="main-store/index.html">continue</a></p>
-    <small>Reviewing the whole build? <a href="review.html">See every page</a></small>
   </div>
 </body>
 </html>
